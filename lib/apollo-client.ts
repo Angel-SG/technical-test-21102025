@@ -1,19 +1,17 @@
-'use client';
+import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
 
-import { ApolloClient, InMemoryCache, HttpLink } from '@apollo/client';
-
-export const RICK_AND_MORTY_GRAPHQL = 'https://rickandmortyapi.com/graphql';
+export const RICK_AND_MORTY_GRAPHQL = "https://rickandmortyapi.com/graphql";
 
 /**
- * TODO (Candidate):
- * - Consider SSR vs CSR usage. You may create a separate server-side client if needed
- *   (e.g., using @apollo/experimental-nextjs-app-support or fetch link).
- * - Configure link and cache policies that fit pagination/search.
+ * TODO: Configure Apollo Client for both server and client usage
+ * - Consider SSR vs CSR usage
+ * - You may need separate server-side and client-side clients
+ * - Configure cache policies for pagination/search
+ * - Consider using @apollo/experimental-nextjs-app-support for better SSR
  */
 export function makeClient() {
-  return new ApolloClient({
-    link: new HttpLink({ uri: RICK_AND_MORTY_GRAPHQL, fetch }),
-    cache: new InMemoryCache(),
-    // Consider defaultOptions if you want specific fetchPolicy behavior
-  });
+	return new ApolloClient({
+		link: new HttpLink({ uri: RICK_AND_MORTY_GRAPHQL, fetch }),
+		cache: new InMemoryCache(),
+	});
 }
