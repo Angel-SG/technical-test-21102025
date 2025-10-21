@@ -29,18 +29,12 @@
 - A **server Route Handler** `/api/graphql-proxy` that forwards GraphQL requests (good for future headers/CORS)
 - 1 small test (Vitest + React Testing Library)
 
-## Deliverables
-
-- GitHub repo link with clear commits
-- **README** explaining setup, decisions, and what you’d do with 1–2 extra days
-- (Optional) 1–2 min Loom or a short GIF demo
-
 ## Evaluation (0–5)
 
 - Code clarity & architecture (components, naming, typing)
 - GraphQL usage (queries, cache, pagination/filters, SSR)
-- UX & a11y (loading, errors, navigation)
-- Communication (README, trade-offs)
+- UX (loading, errors, navigation)
+- Communication
 - Time management (core first; extras only if done)
 
 ## Timebox
@@ -65,8 +59,6 @@ You’ll find minimal scaffolding. Please **implement the GraphQL fetching yours
 ### Tips
 
 - Keep components small and reusable.
-- Prefer typed GraphQL (codegen optional if you’re fast).
-- Document trade-offs in the README.
 
 ---
 
