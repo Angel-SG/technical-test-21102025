@@ -16,8 +16,8 @@
    - Episodes where the character appears
 
 3. **Rendering**
-   - Server-render the initial list page (SSR or ISR).
-   - Client navigation should feel smooth.
+   - Client-side rendering with smooth navigation.
+   - Focus on user experience and performance.
 
 4. **UX**
    - Clear loading + error states (skeletons or spinners + friendly messages)
@@ -50,10 +50,10 @@ Target: **3–4 hours** max. Perfection is not required—clarity and reasoning 
 - Run dev: `pnpm dev`
 - Lint: `pnpm lint`
 
-You’ll find minimal scaffolding. Please **implement the GraphQL fetching yourself**:
+You'll find minimal scaffolding. Please **implement the GraphQL fetching yourself**:
 
 - Define queries/mutations
-- Wire Apollo Client on both server & client where needed
+- Configure Apollo Client for client-side usage
 - Implement pagination / search / filter
 
 ### Tips
@@ -64,12 +64,11 @@ You’ll find minimal scaffolding. Please **implement the GraphQL fetching yours
 
 ## Tasks Checklist
 
-- [ ] **Apollo Client setup** - Configure for both server and client usage (`lib/apollo-client.ts`)
+- [ ] **Apollo Client setup** - Configure for client-side GraphQL usage (`lib/apollo-client.ts`)
 - [ ] **Characters list** - Implement search, status filter, and pagination
 - [ ] **Character detail page** - Fetch and display character info + episodes
 - [ ] **Loading/error states** - Add proper UX with skeletons and error handling
 - [ ] **Accessibility** - Ensure keyboard navigation and screen reader support
-- [ ] **SSR consideration** - Decide on server-side rendering approach
 - [ ] **README notes** - Document decisions and trade-offs
 
 ## Current State

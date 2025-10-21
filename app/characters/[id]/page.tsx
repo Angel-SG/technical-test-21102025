@@ -6,14 +6,13 @@ import Link from "next/link";
 // - Display basic info (name, status, species, image)
 // - Show episodes where the character appears
 // - Handle loading and error states
-// - Consider SSR vs CSR approach
 // - Make it accessible
 
 interface Params {
 	params: { id: string };
 }
 
-export default async function CharacterPage({ params }: Params) {
+export default function CharacterPage({ params }: Params) {
 	return (
 		<main className="space-y-4">
 			<Link href="/characters" className="underline">
