@@ -8,9 +8,25 @@ export const RICK_AND_MORTY_GRAPHQL = "https://rickandmortyapi.com/graphql";
  * - Consider error handling and retry logic
  * - Optimize for the Rick & Morty API structure
  */
-export function makeClient() {
+export default function makeClient() {
 	return new ApolloClient({
 		link: new HttpLink({ uri: RICK_AND_MORTY_GRAPHQL }),
-		cache: new InMemoryCache(),
+		cache: new InMemoryCache({
+			typePolicies: {
+				Query: {
+					fields: {
+						characters: {
+							keyArgs: false,
+							merge(existing = { results: [] }, incoming) {
+								return{
+									...existing,
+									results: [...(existing.results || []), ...incoming.results],
+								};
+							}
+						},
+					},
+				},
+			},
+		}),
 	});
 }
