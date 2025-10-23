@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
-import ApolloWrapper from "@/components/ApolloWrapper";
+
 export const metadata: Metadata = {
 	title: "Tech Test — Next.js + GraphQL",
 	description: "Rick & Morty technical test with Next.js and GraphQL",
@@ -14,9 +14,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className="min-h-dvh antialiased">
-				<ApolloWrapper>
 				<div className="mx-auto max-w-5xl p-4 sm:p-6 lg:p-8">{children}</div>
-				</ApolloWrapper>
 			</body>
 		</html>
 	);
